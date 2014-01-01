@@ -45,7 +45,6 @@ public class MobDropsListener implements Listener {
             Creeper creeper = (Creeper) event.getEntity();
             if (creeper.isPowered()) {
                 event.setDroppedExp(event.getDroppedExp() * 2);
-                List<ItemStack> drops = new ArrayList<ItemStack>(event.getDrops());
                 ItemStack firework = new ItemStack(Material.FIREWORK, 1 + (int) (Math.random() * 3));
                 FireworkMeta meta = (FireworkMeta) firework.getItemMeta();
 
@@ -142,7 +141,7 @@ public class MobDropsListener implements Listener {
                 meta.addEffect(builder.build());
                 meta.setPower((int) (1 + (int) (Math.random() * 3)));
                 firework.setItemMeta(meta);
-                drops.add(firework);
+		event.getDrops().add(firework);
 
             }
         }
