@@ -139,7 +139,7 @@ public class MobDropsListener implements Listener {
                     builder.trail(true);
                 }
                 meta.addEffect(builder.build());
-                meta.setPower((int) (1 + (int) (Math.random() * 3)));
+                meta.setPower((int) (1 + (int) (Math.random() * 2)));
                 firework.setItemMeta(meta);
 		event.getDrops().add(firework);
 
