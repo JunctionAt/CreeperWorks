@@ -40,7 +40,6 @@ public class CreeperWorksListener implements Listener {
             Random rand = new Random();
 
             event.setDroppedExp(event.getDroppedExp() * 2);
-            List<ItemStack> drops = new ArrayList<ItemStack>(event.getDrops());
             ItemStack firework = new ItemStack(Material.FIREWORK, 1 + (int) (Math.random() * 3));
             FireworkMeta meta = (FireworkMeta) firework.getItemMeta();
 
@@ -136,7 +135,7 @@ public class CreeperWorksListener implements Listener {
             meta.addEffect(builder.build());
             meta.setPower((int) (1 + (int) (Math.random() * 3)));
             firework.setItemMeta(meta);
-            drops.add(firework);
+            event.getDrops().add(firework);
 
         }
     }
