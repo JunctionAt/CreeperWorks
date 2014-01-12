@@ -57,6 +57,26 @@ public class CreeperWorksListener implements Listener {
                     builder.withColor(getColor(), getColor(), getColor());
             }
 
+            //ultimate answer
+            if (rand.nextInt(100) >= 42){
+                //fair dice roll
+                if (rand.nextInt(6) == 5){
+                    //...and a coin flip
+                    if (rand.nextInt(2) == 0){
+                        for (int i=0; i<10; i++){
+                            if (event.getEntity().getKiller() != null)
+                                event.getEntity().getKiller().sendMessage(ChatColor.MAGIC + "1234567890" + ChatColor.RESET +
+                                                                          ChatColor.RED + "Y" + ChatColor.GOLD + 'o' + ChatColor.YELLOW + 'u' +
+                                                                          ChatColor.DARK_GREEN + '\'' + ChatColor.DARK_BLUE + "v" + ChatColor.DARK_PURPLE + "e " +
+                                                                          ChatColor.LIGHT_PURPLE + 'w' + ChatColor.RED + 'o' + ChatColor.GOLD + 'n'+
+                                                                          ChatColor.YELLOW + '!' + ChatColor.RESET + 
+                                                                          ChatColor.MAGIC + "1234567890" + ChatColor.RESET);
+                            builder.withColor(Color.fromRGB(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256)));
+                        }
+                    }
+                }
+            }
+
             if (rand.nextInt(2) > 0){
                 builder.withFade(getColor());
             }
