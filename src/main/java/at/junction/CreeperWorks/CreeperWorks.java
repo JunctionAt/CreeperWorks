@@ -13,13 +13,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class CreeperWorks extends JavaPlugin {
+import java.io.File;
 
+public class CreeperWorks extends JavaPlugin {
+    Configuration config;
     @Override
     public void onEnable() {
         getLogger().info("Enabling CreeperWorks");
         getServer().getPluginManager().registerEvents(new CreeperWorksListener(this), this);
-
+        config = new Configuration(this);
+        File file = new File(getDataFolder(), "config.yml");
+        if(!file.exists()) {
+            getConfig().options().copyDefaults(true);
+            saveConfig();
+        }
     }
 
     @Override
