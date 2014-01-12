@@ -1,9 +1,20 @@
-name: MobDrops
+name: CreeperWorks
 version: 1.0-SNAPSHOT
 description: Does bad things to creepers
 author: [zifnab06]
-website: http://github.com/junctionat/MobDrops
+website: http://github.com/junctionat/CreeperWorks
 
-main: at.junction.MobDrops.MobDrops
+main: at.junction.CreeperWorks.CreeperWorks
 database: false
+
+commands:
+  spawn-creeper:
+    description: Spawn a creeper!
+    usage: /<command> world x y z number
+    permission: creeperworks.spawn
+
+permissions:
+  creeperworks.spawn:
+    description: Spawn creepers!
+    default: op
 
