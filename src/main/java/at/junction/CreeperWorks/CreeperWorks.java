@@ -10,6 +10,8 @@ import org.bukkit.entity.Creeper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class CreeperWorks extends JavaPlugin {
 
@@ -47,7 +49,8 @@ public class CreeperWorks extends JavaPlugin {
             Creeper creeper = (Creeper) w.spawnEntity(loc, EntityType.CREEPER);
             creeper.setPowered(true);
             creeper.setMetadata("CW-SPAWN", new FixedMetadataValue(this, true));
-            creeper.setHealth(creeper.getHealth() * 2);
+            creeper.setHealth(20);
+            creeper.addPotionEffect(new PotionEffect(PotionEffectType.ABSORPTION, 36000, 24));
         }
     }
 

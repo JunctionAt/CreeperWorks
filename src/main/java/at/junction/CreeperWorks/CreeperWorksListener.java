@@ -150,9 +150,6 @@ public class CreeperWorksListener implements Listener {
 
                 if (damager instanceof Creeper) {
                     event.setCancelled(true);
-                } else if (damager instanceof Player) {
-                    ((Creeper) hurt).setNoDamageTicks(100);
-                    ((Player)damager).sendMessage(ChatColor.GREEN + "Creeper is damaged! He hides behind his shield...");
                 }
             }
         }
@@ -162,7 +159,7 @@ public class CreeperWorksListener implements Listener {
     public void onExplosionEvent(ExplosionPrimeEvent event){
         if (event.getEntity() instanceof Creeper){
             if (event.getEntity().hasMetadata("CW-SPAWN")){
-                event.setRadius(event.getRadius() * 2);
+                event.setRadius((int)(event.getRadius() * 1.5));
             }
         }
     }
